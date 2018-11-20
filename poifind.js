@@ -16,7 +16,7 @@ var matchName= function(name,poitype) {
 }
 
 var getByNumber=function(idx) {
-    return mapdata.filter(num => num[4]==idx);
+    return mapdata.filter(num => num[5]==idx);
 }
 
 var load = function(file) {
@@ -38,7 +38,7 @@ var load = function(file) {
     for(j=0;j<mapdata.length;j++) {
 	i++;
 	while(avoid[i] != undefined) i++;
-	mapdata[j][4]=i;
+	mapdata[j][5]=i;
 	ptypes[mapdata[j][1]]=true;
     }
     poitypes=Object.keys(ptypes);
@@ -73,7 +73,7 @@ var singleMatch = function(mapres,name,poitype,returnExact = false) {
 var listResults = function(mapres) {
     var res = [];
     mapres.forEach(el => {
-	res.push("" + el[1]+": "+el[0] + " _"+el[4]+"_")
+	res.push("" + el[1]+": "+el[0] + " _"+el[5]+"_")
     });
     return res;
 }
