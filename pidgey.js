@@ -83,7 +83,7 @@ client.on("message", async message => {
 	    
 	    let coord=singleMatch[2]+","+singleMatch[3];
 		let ingressimage=singleMatch[4];
-	    let mapurl = 'https://maps.googleapis.com/maps/api/staticmap?size=512x512&zoom=15&scale=2&key=' + config.google_api_key;
+	    let mapurl = 'https://maps.googleapis.com/maps/api/staticmap?size=600x500&zoom=15&scale=2&key=' + config.google_api_key;
 	    mapurl=mapurl + '&center='+coord;
 	    if(singleMatch['1']=='gym') 
 		mapurl=mapurl+"&markers=color:green%7Clabel:G%7C"+coord;
@@ -105,7 +105,8 @@ client.on("message", async message => {
 				"[StreetView](https://www.google.com/maps/?q=&layer=c&cbll="+ coord + ")" +
 				" / " +
 				"[Ingress Image]("+ingressimage+")"
-			       );
+			       )
+		.setFooter("Note: The Ingress image may not be the image used in Pokemon Go.");
 	    
 	    clientMessage = {embed};
 	    
