@@ -5,8 +5,8 @@ var poitypes={};
 var matchName= function(name,poitype) {
     // Quote metacharacters
     name=name.replace(/[-\/\\^$+?.()|[\]{}]/g, '\\$&');
+	name=name.replace('’','\'');
     name=name.replace('*','.*');
-    
     var re=new RegExp(name, 'i');
     return function(el) {
         if(poitype && poitype!=el[1])  return false;
